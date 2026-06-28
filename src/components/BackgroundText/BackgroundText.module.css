@@ -1,0 +1,83 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Let clicks pass through to the real content */
+  overflow: hidden;
+  user-select: none;
+  /* Custom properties --tx and --ty are set by JS */
+  --tx: 50vw;
+  --ty: 50vh;
+}
+
+/* ── Base outlined layer ─────────────────── */
+.outlined {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 25vw, 30rem); /* Massive background text */
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03); /* Extremely subtle outline */
+  white-space: nowrap;
+}
+
+/* ── Gradient reveal layer ───────────────── */
+.reveal {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 25vw, 30rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  white-space: nowrap;
+
+  /* Subtle Aurora gradient fill */
+  background: linear-gradient(135deg, rgba(41, 151, 255, 0.5) 0%, rgba(94, 92, 230, 0.5) 50%, rgba(244, 114, 182, 0.5) 100%);
+  background-size: 200% 200%;
+  animation: aurora-shift 5s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Radial mask centered on cursor */
+  -webkit-mask-image: radial-gradient(
+    circle 300px at var(--tx) var(--ty),
+    black 0%,
+    transparent 70%
+  );
+  mask-image: radial-gradient(
+    circle 300px at var(--tx) var(--ty),
+    black 0%,
+    transparent 70%
+  );
+}
+
+@keyframes aurora-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .outlined {
+    font-size: clamp(5rem, 15vw, 10rem);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.015);
+  }
+  .reveal {
+    font-size: clamp(5rem, 15vw, 10rem);
+    opacity: 0.25; /* Significantly reduce opacity on mobile to prevent overlap distraction */
+  }
+}

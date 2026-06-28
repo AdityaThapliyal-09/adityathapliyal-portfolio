@@ -1,0 +1,166 @@
+.expSection {
+  background: transparent;
+}
+
+.timeline {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Timeline Item ──────────────────────── */
+.item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--space-4);
+  padding-bottom: var(--space-6);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* ── Connector ─────────────────────────── */
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nodeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-base);
+}
+
+.item:hover .nodeIcon {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.line {
+  flex: 1;
+  width: 1px;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Card ──────────────────────────────── */
+.card {
+  padding: var(--space-4);
+  transition: all var(--transition-base);
+  box-shadow: none;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.role {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.org {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.typeBadge { 
+  font-size: 0.7rem; 
+  letter-spacing: 0.02em;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ── Bullets ──────────────────────────── */
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.bulletDot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 50%;
+  margin-top: 9px;
+  flex-shrink: 0;
+  background: var(--text-muted);
+  transition: background var(--transition-base);
+}
+
+.item:hover .bulletDot {
+  background: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .item {
+    grid-template-columns: 36px 1fr;
+    gap: var(--space-3);
+  }
+
+  .nodeIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cardHeader { flex-direction: column; }
+  .meta { align-items: flex-start; }
+}

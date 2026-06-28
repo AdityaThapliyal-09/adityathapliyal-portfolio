@@ -1,0 +1,109 @@
+/* Fixed bottom dock — desktop only */
+.dockContainer {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: none; /* container non-interactive */
+}
+
+/* ── Dock bar ─────────────────────────────── */
+.dock {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(45, 45, 45, 0.7); /* Lighter neutral so it doesn't blend into black bg */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Stronger border for visibility */
+  border-radius: 32px; /* Pill shape */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  pointer-events: all;
+}
+
+/* ── Icon wrapper (for tooltip positioning) ── */
+.iconWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Icon button ──────────────────────────── */
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;   /* default — overridden by Framer motion style */
+  height: 40px;
+  border-radius: 50%; /* Circle shape */
+  background: rgba(255, 255, 255, 0.05); /* Slight fill */
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.iconBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* ── Tooltip ──────────────────────────────── */
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px); /* Spaced out above the dock */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateX(-50%) translateY(4px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.iconWrap:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Separator ────────────────────────────── */
+.separator {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 2px;
+  align-self: center;
+}
+
+/* ── Mobile Optimization ───────────────────────── */
+@media (max-width: 768px) {
+  .dockContainer {
+    bottom: 12px;
+  }
+  .dock {
+    padding: 6px;
+    gap: 4px;
+    background: rgba(30, 30, 30, 0.85); /* Slightly darker on mobile but still visible */
+  }
+  .iconBtn {
+    font-size: 0.9rem;
+    width: 32px !important; /* Force smaller icons against Framer Motion inline styles */
+    height: 32px !important;
+  }
+}

@@ -1,0 +1,45 @@
+.container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0; /* Keep it strictly behind the content */
+}
+
+/* Base beam structure */
+.beam {
+  position: absolute;
+  top: -150px; /* Originate from above the screen */
+  width: 60vw;
+  height: 150vh; /* Cast deep down */
+  transform-origin: top center;
+  filter: blur(80px); /* Soft volumetric glow */
+  opacity: 0.7; /* Subtly blended */
+  will-change: transform, opacity;
+}
+
+/* Left Beam — slightly stronger, white/cyan tint matching website */
+.beamLeft {
+  left: 10%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 229, 255, 0.02) 50%, transparent 100%);
+}
+
+/* Right Beam — softer, white/violet tint */
+.beamRight {
+  right: 10%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(176, 110, 243, 0.02) 50%, transparent 100%);
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .beam {
+    width: 100vw;
+    filter: blur(60px);
+  }
+  .beamLeft {
+    left: -20%;
+  }
+  .beamRight {
+    right: -20%;
+  }
+}

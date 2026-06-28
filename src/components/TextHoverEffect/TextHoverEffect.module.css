@@ -1,0 +1,67 @@
+.wrap {
+  display: block;
+  position: relative;
+  cursor: default;
+  /* CSS custom properties updated by JS on mousemove */
+  --tx: 50%;
+  --ty: 50%;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── Base outlined layer ─────────────────── */
+.outlined {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.13);
+  color: transparent;
+  transition: -webkit-text-stroke-color 0.4s ease;
+}
+
+.wrap:hover .outlined {
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Gradient reveal layer ───────────────── */
+.reveal {
+  /* Positioned over outlined text */
+  position: absolute;
+  inset: 0;
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+
+  /* Aurora gradient fill */
+  background: linear-gradient(135deg, #00e5ff 0%, #b06ef3 50%, #f472b6 100%);
+  background-size: 200% 200%;
+  animation: aurora-shift 5s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Radial mask centered on cursor — starts fully hidden */
+  -webkit-mask-image: radial-gradient(
+    circle 200px at var(--tx) var(--ty),
+    black 0%,
+    black 25%,
+    transparent 65%
+  );
+  mask-image: radial-gradient(
+    circle 200px at var(--tx) var(--ty),
+    black 0%,
+    black 25%,
+    transparent 65%
+  );
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.wrap:hover .reveal {
+  opacity: 1;
+}
