@@ -1,0 +1,119 @@
+.sideProjectsSection {
+  background: transparent;
+  padding-top: 0; /* Flows directly from the main projects section */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Card ────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all var(--transition-slow);
+  box-shadow: none;
+  position: relative;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  background: rgba(10, 10, 10, 0.4);
+  border-radius: var(--radius-md);
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* Canvas Reveal Dot Background (Magnetic Cursor Tracker) */
+.canvasReveal {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, var(--card-accent) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  -webkit-mask-image: radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%);
+  mask-image: radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .canvasReveal {
+  opacity: 0.15; /* Reveal the dot matrix smoothly */
+}
+
+/* Ensure content sits above the canvas background */
+.cardContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  flex: 1;
+}
+
+/* ── Content ─────────────────────────────── */
+.tag {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1; /* Pushes links to bottom */
+}
+
+/* ── Links ───────────────────────────────── */
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.linkBtn {
+  font-size: 0.85rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.liveBtn {
+  flex: 1;
+  padding: 10px 16px;
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 768px) {
+  .grid { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .canvasReveal {
+    opacity: 0.25; /* Brighter for mobile touch visibility */
+  }
+}
