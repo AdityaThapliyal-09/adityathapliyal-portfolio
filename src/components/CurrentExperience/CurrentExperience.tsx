@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, Variants } from "framer-motion";
 import { FiCheckCircle, FiUsers, FiTarget, FiZap, FiCode, FiBriefcase } from "react-icons/fi";
 import styles from "./CurrentExperience.module.css";
 
@@ -36,7 +36,7 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.8, delay, ease: [0.25, 1, 0.5, 1] as const },
 });
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -44,7 +44,7 @@ const staggerContainer = {
   },
 };
 
-const staggerItem = {
+const staggerItem: Variants = {
   hidden: { opacity: 0, y: 10 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
