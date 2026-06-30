@@ -25,7 +25,7 @@ export default function Experience() {
         >
           <span className="label">My Journey</span>
           <h2>
-            Experience &amp; Education.
+            Past Experience &amp; Education.
           </h2>
           <p>From classroom to founder — my path as a product builder.</p>
         </motion.div>

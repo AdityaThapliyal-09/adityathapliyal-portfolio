@@ -25,8 +25,8 @@ export default function Hero() {
         
         {/* Subtitle / Status */}
         <motion.div {...fadeUp(0.1)} className={styles.statusBadge}>
-          <span className="status-dot" />
-          <span>5th Semester BCA · Open to Internships</span>
+          <span className="status-dot" style={{ backgroundColor: "var(--accent-green)", boxShadow: "0 0 10px var(--accent-green)", animation: "pulse 2s infinite" }} />
+          <span>Currently Interning at <strong>Not Your College</strong></span>
         </motion.div>
 
         {/* Name Container */}
