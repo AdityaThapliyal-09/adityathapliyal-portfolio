@@ -214,11 +214,13 @@ code, pre {
   box-shadow: 0 4px 24px rgba(0,0,0,0.2);
 }
 
-.glass-card:hover {
-  background: var(--glass-bg-hover);
-  border-color: var(--glass-border-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--glow-card);
+@media (hover: hover) and (pointer: fine) {
+  .glass-card:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-card);
+  }
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────────── */
@@ -244,9 +246,11 @@ code, pre {
   box-shadow: 0 4px 14px rgba(255,255,255,0.1);
 }
 
-.btn-primary:hover {
-  transform: scale(1.02);
-  background: #f5f5f7;
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    transform: scale(1.02);
+    background: #f5f5f7;
+  }
 }
 
 .btn-outline {
@@ -256,9 +260,11 @@ code, pre {
   backdrop-filter: blur(20px);
 }
 
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+@media (hover: hover) and (pointer: fine) {
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
 }
 
 /* ─── Badge / Pill ───────────────────────────────────────────────────── */
@@ -295,5 +301,15 @@ code, pre {
 
   .section-heading {
     margin-bottom: var(--space-8);
+  }
+}
+
+/* ─── Accessibility ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -132,16 +132,6 @@ export default function Skills() {
                     <IconComp size={28} />
                   </div>
                   <p className={styles.skillName}>{skill.name}</p>
-                  <div className={styles.progressBar}>
-                    <motion.div
-                      className={styles.progressFill}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level}%` }}
-                      transition={{ delay: i * 0.045 + 0.15, duration: 0.8, ease: "easeOut" }}
-                      style={{ "--icon-color": iconColor } as React.CSSProperties}
-                    />
-                  </div>
-                  <p className={styles.skillLevel}>{skill.level}%</p>
                 </motion.div>
               );
             })}

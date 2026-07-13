@@ -9,7 +9,7 @@ const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-50px" },
-  transition: { duration: 1, delay, ease: [0.25, 1, 0.5, 1] as const },
+  transition: { duration: 1, delay, ease: [0.16, 1, 0.3, 1] as const },
 });
 
 const PROJECT_PALETTES: { from: string; to: string; num: string }[] = [
@@ -108,8 +108,17 @@ export default function Projects() {
                     {/* Title */}
                     <h3 className={styles.title}>{project.title}</h3>
 
-                    {/* Description */}
-                    <p className={styles.description}>{project.description}</p>
+                    {/* Problem / Solution Framing */}
+                    <div className={styles.framing}>
+                      <div className={styles.framingBlock}>
+                        <span className={styles.framingLabel}>Product:</span>
+                        <p className={styles.framingText}>{project.description}</p>
+                      </div>
+                      <div className={styles.framingBlock}>
+                        <span className={styles.framingLabel}>Execution:</span>
+                        <p className={styles.framingText}>{project.longDescription}</p>
+                      </div>
+                    </div>
 
                     {/* Key impact line */}
                     {i === 0 && (

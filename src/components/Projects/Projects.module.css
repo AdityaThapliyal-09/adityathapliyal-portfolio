@@ -140,6 +140,35 @@
   flex: 1;
 }
 
+/* Framing */
+.framing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.framingBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.framingLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.framingText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
 .impact {
   font-size: 0.85rem;
   color: var(--text-primary);

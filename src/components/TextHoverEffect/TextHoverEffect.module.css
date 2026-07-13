@@ -65,3 +65,12 @@
 .wrap:hover .reveal {
   opacity: 1;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .outlined {
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.4);
+  }
+  .reveal {
+    display: none;
+  }
+}
