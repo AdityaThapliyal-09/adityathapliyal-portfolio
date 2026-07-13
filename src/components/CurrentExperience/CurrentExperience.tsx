@@ -58,14 +58,18 @@ export default function CurrentExperience() {
             <div className={styles.cardHeader}>
               <div className={styles.identityGroup}>
                 <div className={styles.logoBox}>
-                  <div className={styles.logoInner}>NYC</div>
+                  <img src="/nyclogo.jpg" alt="NYC" className={styles.logoImage} />
                 </div>
                 <div className={styles.companyMeta}>
                   <h3 className={styles.companyName}>Not Your College</h3>
                   <div className={styles.companySubtitle}>
                     <span className={styles.roleLabel}>Software Engineering Intern</span>
                     <span className={styles.divider}>·</span>
-                    <span className={styles.poweredBy}>Powered by Sheryians</span>
+                    <span className={styles.poweredBy}>
+                      Powered by
+                      <img src="/sheryians.jpg" alt="Sheryians" className={styles.sheryiansLogo} />
+                      Sheryians
+                    </span>
                   </div>
                 </div>
               </div>
