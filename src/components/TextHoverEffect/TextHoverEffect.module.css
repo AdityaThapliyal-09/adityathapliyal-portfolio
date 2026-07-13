@@ -34,13 +34,8 @@
   font-weight: 900;
   letter-spacing: -0.04em;
 
-  /* Aurora gradient fill */
-  background: linear-gradient(135deg, #00e5ff 0%, #b06ef3 50%, #f472b6 100%);
-  background-size: 200% 200%;
-  animation: aurora-shift 5s ease infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Solid color highlight */
+  color: #00e5ff;
 
   /* Radial mask centered on cursor — starts fully hidden */
   -webkit-mask-image: radial-gradient(

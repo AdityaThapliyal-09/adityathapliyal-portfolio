@@ -44,13 +44,8 @@
   line-height: 1;
   white-space: nowrap;
 
-  /* Subtle Aurora gradient fill */
-  background: linear-gradient(135deg, rgba(41, 151, 255, 0.5) 0%, rgba(94, 92, 230, 0.5) 50%, rgba(244, 114, 182, 0.5) 100%);
-  background-size: 200% 200%;
-  animation: aurora-shift 5s ease infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Solid highlight reveal */
+  color: rgba(41, 151, 255, 0.3);
 
   /* Radial mask centered on cursor */
   -webkit-mask-image: radial-gradient(

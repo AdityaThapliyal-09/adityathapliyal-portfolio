@@ -165,12 +165,10 @@ code, pre {
   z-index: 1;
 }
 
-/* ─── Gradient Text ──────────────────────────────────────────────────── */
+/* ─── Solid High-Contrast Text ─────────────────────────────────────────── */
 .gradient-text {
-  background: var(--gradient-hero);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* ─── Section Heading ────────────────────────────────────────────────── */

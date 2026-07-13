@@ -117,9 +117,7 @@
   font-family: var(--font-display);
   font-weight: 900;
   font-size: 1.4rem;
-  background: linear-gradient(135deg, #fff, #aaa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary);
   z-index: 2;
   letter-spacing: -0.02em;
 }
