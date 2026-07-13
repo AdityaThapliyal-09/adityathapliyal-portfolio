@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
-import { FiCheckCircle, FiUsers, FiTarget, FiZap, FiCode, FiBriefcase, FiAward, FiArrowRight } from "react-icons/fi";
+import { FiCheckCircle, FiUsers, FiTarget, FiZap, FiCode, FiBriefcase, FiAward, FiBarChart2, FiFigma, FiTrendingUp } from "react-icons/fi";
 import styles from "./CurrentExperience.module.css";
 
 const fadeUp = (delay = 0) => ({
@@ -74,55 +74,82 @@ export default function CurrentExperience() {
               </div>
             </div>
 
-            {/* Hero Metric */}
-            <div className={styles.heroMetricArea}>
-              <h2 className={styles.heroNumber}>
-                1 of 5 <span className={styles.heroSubtext}>Selected Interns</span>
-              </h2>
-              <p className={styles.heroContext}>
-                Selected for the highly exclusive offline sponsored internship out of <strong>2700+ applicants</strong> across the country.
+            {/* Philosophy Block */}
+            <div className={styles.philosophyBlock}>
+              <h4 className={styles.philosophyTitle}>The Problem-First Philosophy</h4>
+              <p className={styles.philosophyText}>
+                The problem is the mother of all development: Design, Tech, Marketing, and Sales. 
+                For our flagship project, <strong>DormEats</strong>, we started with a simple truth: 
+                <em>Restaurants need customers, and students are hungry</em>. Before writing a single line of code, we mapped the business mechanics connecting them—understanding user frustrations, researching solutions, planning the architecture, and executing fast.
               </p>
             </div>
 
-            {/* Storytelling Content */}
-            <div className={styles.storytelling}>
-              <div className={styles.storyBlock}>
-                <h4 className={styles.storyTitle}>The Role</h4>
-                <p className={styles.storyText}>
-                  Contributed to practical product development within the Sheryians ecosystem. My daily workflow mirrored modern industry standards, focusing on building scalable, production-ready applications.
-                </p>
-              </div>
-              
-              <div className={styles.storyBlock}>
-                <h4 className={styles.storyTitle}>Impact</h4>
-                <p className={styles.storyText}>
-                  Moved beyond theoretical concepts to engineer real-world solutions. I was directly responsible for writing clean, optimized code that solved actual user problems while collaborating closely with a highly vetted team.
-                </p>
-              </div>
+            {/* Execution Pipeline (Bento Grid) */}
+            <div className={styles.pipelineGrid}>
+              <motion.div {...fadeUp(0.1)} className={styles.pipelineCard}>
+                <div className={styles.pipelineHeader}>
+                  <div className={styles.pipelineIconWrap}><FiBarChart2 /></div>
+                  <h4 className={styles.pipelineTitle}>Market Research</h4>
+                </div>
+                <p className={styles.pipelineText}>Calculated CAC, LTV, and AOV. Analyzed front-end vs. back-end profit margins to ensure a sustainable, scalable business model.</p>
+              </motion.div>
 
-              <div className={styles.storyBlock}>
-                <h4 className={styles.storyTitle}>Takeaway</h4>
-                <p className={styles.storyText}>
-                  This opportunity accelerated my growth by surrounding me with experienced mentors and high-performing peers. It bridged the gap between traditional education and elite tech industry expectations.
-                </p>
-              </div>
+              <motion.div {...fadeUp(0.2)} className={styles.pipelineCard}>
+                <div className={styles.pipelineHeader}>
+                  <div className={styles.pipelineIconWrap}><FiFigma /></div>
+                  <h4 className={styles.pipelineTitle}>UI/UX Design</h4>
+                </div>
+                <p className={styles.pipelineText}>Translated research into wireframes, mockups, and high-fidelity Figma prototypes, prioritizing intuitive user flows for hungry students.</p>
+              </motion.div>
+
+              <motion.div {...fadeUp(0.3)} className={styles.pipelineCard}>
+                <div className={styles.pipelineHeader}>
+                  <div className={styles.pipelineIconWrap}><FiCode /></div>
+                  <h4 className={styles.pipelineTitle}>Tech Architecture</h4>
+                </div>
+                <p className={styles.pipelineText}>Generated strict SRS (Functional, Non-Functional, Out of Scope). Architected the tech stack, enforced SOLID principles, structured linting, and integrated logging.</p>
+              </motion.div>
+
+              <motion.div {...fadeUp(0.4)} className={styles.pipelineCard}>
+                <div className={styles.pipelineHeader}>
+                  <div className={styles.pipelineIconWrap}><FiTrendingUp /></div>
+                  <h4 className={styles.pipelineTitle}>Marketing & Sales</h4>
+                </div>
+                <p className={styles.pipelineText}>"Speed is money." Rapidly executed content strategies, graphics, and editing to drive user acquisition and validate the product in the real world.</p>
+              </motion.div>
             </div>
 
             {/* Internship Gallery */}
             <div className={styles.gallery}>
-              <motion.div {...fadeUp(0.1)} className={`${styles.galleryItem} ${styles.galleryMain}`}>
-                <img src="/nyc-1.jpg" alt="Presenting at NYC Internship" className={styles.galleryImg} />
-              </motion.div>
+              {/* Product Mockups */}
               <div className={styles.gallerySubGrid}>
+                <motion.div {...fadeUp(0.1)} className={styles.galleryItem}>
+                  <img src="/dormeats-1.png" alt="DormEats Splash Screen" className={styles.galleryImg} />
+                </motion.div>
                 <motion.div {...fadeUp(0.2)} className={styles.galleryItem}>
-                  <img src="/nyc-2.jpg" alt="Collaborating at NYC Internship" className={styles.galleryImg} />
+                  <img src="/dormeats-2.png" alt="DormEats UI Mockups" className={styles.galleryImg} />
                 </motion.div>
                 <motion.div {...fadeUp(0.3)} className={styles.galleryItem}>
-                  <img src="/nyc-3.jpg" alt="Showing product at NYC Internship" className={styles.galleryImg} />
+                  <img src="/dormeats-3.png" alt="DormEats Checkout Screen" className={styles.galleryImg} />
                 </motion.div>
-                <motion.div {...fadeUp(0.4)} className={styles.galleryItem}>
-                  <img src="/nyc-4.jpg" alt="Team bonding at NYC Internship" className={styles.galleryImg} />
+              </div>
+
+              {/* Real World Photos */}
+              <div className={styles.galleryRealWorld}>
+                <motion.div {...fadeUp(0.4)} className={`${styles.galleryItem} ${styles.galleryMain}`}>
+                  <img src="/nyc-1.jpg" alt="Presenting at NYC Internship" className={styles.galleryImg} />
                 </motion.div>
+                <div className={styles.gallerySubGrid}>
+                  <motion.div {...fadeUp(0.5)} className={styles.galleryItem}>
+                    <img src="/nyc-letter.jpg" alt="NYC Welcome Letter" className={styles.galleryImg} />
+                  </motion.div>
+                  <motion.div {...fadeUp(0.6)} className={styles.galleryItem}>
+                    <img src="/nyc-2.jpg" alt="Collaborating at NYC Internship" className={styles.galleryImg} />
+                  </motion.div>
+                  <motion.div {...fadeUp(0.7)} className={styles.galleryItem}>
+                    <img src="/nyc-3.jpg" alt="Showing product at NYC Internship" className={styles.galleryImg} />
+                  </motion.div>
+                </div>
               </div>
             </div>
 
