@@ -9,7 +9,7 @@ export const siteConfig = {
   phone: "+91 6395613242",
   location: "Dehradun, Uttarakhand, India",
   tagline: "Bridging Artificial Intelligence with Premium Digital Experiences.",
-  status: "Open to Internship Opportunities",
+  status: "Open to Opportunities",
   githubUrl: "https://github.com/AdityaThapliyal-09",
   linkedinUrl: "https://www.linkedin.com/in/aditya-thapliyal",
 };

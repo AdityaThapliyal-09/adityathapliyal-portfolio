@@ -43,7 +43,7 @@ export default function CurrentExperience() {
         
         {/* Section Heading */}
         <motion.div {...fadeUp(0)} className="section-heading" style={{ marginBottom: "var(--space-6)" }}>
-          <span className="label">Current Status</span>
+          <span className="label">Experience</span>
           <h2>Professional Experience.</h2>
         </motion.div>
 
@@ -68,11 +68,9 @@ export default function CurrentExperience() {
                   </div>
                 </div>
               </div>
-              <div className={styles.statusBadge}>
-                <div className={styles.pulseRing}>
-                  <div className={styles.pulseDot} />
-                </div>
-                <span className={styles.statusText}>ACTIVE</span>
+              <div className={styles.statusBadgeCompleted}>
+                <FiCheckCircle size={14} className={styles.completedIcon} />
+                <span className={styles.statusTextCompleted}>COMPLETED</span>
               </div>
             </div>
 
@@ -89,23 +87,23 @@ export default function CurrentExperience() {
             {/* Storytelling Content */}
             <div className={styles.storytelling}>
               <div className={styles.storyBlock}>
-                <h4 className={styles.storyTitle}>Current Role</h4>
+                <h4 className={styles.storyTitle}>The Role</h4>
                 <p className={styles.storyText}>
-                  Actively contributing to practical product development within the Sheryians ecosystem. My daily workflow mirrors modern industry standards, focusing on building scalable, production-ready applications.
+                  Contributed to practical product development within the Sheryians ecosystem. My daily workflow mirrored modern industry standards, focusing on building scalable, production-ready applications.
                 </p>
               </div>
               
               <div className={styles.storyBlock}>
                 <h4 className={styles.storyTitle}>Impact</h4>
                 <p className={styles.storyText}>
-                  Moving beyond theoretical concepts to engineer real-world solutions. I am directly responsible for writing clean, optimized code that solves actual user problems while collaborating closely with a highly vetted team.
+                  Moved beyond theoretical concepts to engineer real-world solutions. I was directly responsible for writing clean, optimized code that solved actual user problems while collaborating closely with a highly vetted team.
                 </p>
               </div>
 
               <div className={styles.storyBlock}>
-                <h4 className={styles.storyTitle}>Why this Matters</h4>
+                <h4 className={styles.storyTitle}>Takeaway</h4>
                 <p className={styles.storyText}>
-                  This opportunity accelerates my growth by surrounding me with experienced mentors and high-performing peers. It bridges the gap between traditional education and elite tech industry expectations.
+                  This opportunity accelerated my growth by surrounding me with experienced mentors and high-performing peers. It bridged the gap between traditional education and elite tech industry expectations.
                 </p>
               </div>
             </div>
@@ -171,7 +169,7 @@ export default function CurrentExperience() {
             {/* Understated Recruiter Footer */}
             <div className={styles.cardFooter}>
               <p>
-                Currently contributing to practical software development while gaining elite industry experience through real-world product building.
+                Gained elite industry experience and practical software development skills through real-world product building.
               </p>
             </div>
 
@@ -188,11 +186,11 @@ export default function CurrentExperience() {
             
             <div className={styles.timelineNodes}>
               {[
-                { title: "Currently Active", desc: "Building scalable features & collaborating with peers.", status: "active" },
-                { title: "Building Real Products", desc: "Writing production-ready, optimized code.", status: "completed" },
-                { title: "Industry Workflow", desc: "Learning from experienced mentors & modern practices.", status: "completed" },
+                { title: "Internship Completed", desc: "Successfully delivered scalable features & collaborated with peers.", status: "completed" },
+                { title: "Building Real Products", desc: "Wrote production-ready, optimized code.", status: "completed" },
+                { title: "Industry Workflow", desc: "Learned from experienced mentors & modern practices.", status: "completed" },
                 { title: "Internship Begins", desc: "Onboarding into the Not Your College ecosystem.", status: "completed" },
-                { title: "Selection", desc: "Chosen as 1 of 15 from over 2700 applicants.", status: "completed" },
+                { title: "Selection", desc: "Chosen as 1 of 5 from over 2700 applicants.", status: "completed" },
               ].map((node, i) => (
                 <motion.div 
                   key={node.title}

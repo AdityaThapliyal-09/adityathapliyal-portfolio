@@ -110,7 +110,7 @@ export default function Contact() {
             <div className={`glass-card ${styles.availCard}`}>
               <div className={styles.availHeader}>
                 <span className="status-dot" />
-                <span className={styles.availTitle}>Available for Internships</span>
+                <span className={styles.availTitle}>Available for Opportunities</span>
               </div>
               <p className={styles.availText}>
                 5th Semester BCA student looking for opportunities in full-stack AI/ML development or product roles. Open to remote and on-site positions globally.

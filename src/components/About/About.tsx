@@ -15,7 +15,7 @@ const highlights = [
   { icon: FiMapPin, label: "Location", value: "Dehradun, India" },
   { icon: FiBook, label: "Education", value: "BCA @ GEHU" },
   { icon: FiCode, label: "Focus", value: "AI + Full Stack" },
-  { icon: FiZap, label: "Status", value: "Seeking Internships" },
+  { icon: FiZap, label: "Status", value: "Open to Opportunities" },
 ];
 
 export default function About() {
