@@ -79,10 +79,10 @@ export default function CurrentExperience() {
             {/* Hero Metric */}
             <div className={styles.heroMetricArea}>
               <h2 className={styles.heroNumber}>
-                1 of 15 <span className={styles.heroSubtext}>Selected Interns</span>
+                1 of 5 <span className={styles.heroSubtext}>Selected Interns</span>
               </h2>
               <p className={styles.heroContext}>
-                Highly competitive placement chosen from <strong>2700+ applicants</strong> across the country.
+                Selected for the highly exclusive offline sponsored internship out of <strong>2700+ applicants</strong> across the country.
               </p>
             </div>
 
@@ -107,6 +107,24 @@ export default function CurrentExperience() {
                 <p className={styles.storyText}>
                   This opportunity accelerates my growth by surrounding me with experienced mentors and high-performing peers. It bridges the gap between traditional education and elite tech industry expectations.
                 </p>
+              </div>
+            </div>
+
+            {/* Internship Gallery */}
+            <div className={styles.gallery}>
+              <motion.div {...fadeUp(0.1)} className={`${styles.galleryItem} ${styles.galleryMain}`}>
+                <img src="/nyc-1.jpg" alt="Presenting at NYC Internship" className={styles.galleryImg} />
+              </motion.div>
+              <div className={styles.gallerySubGrid}>
+                <motion.div {...fadeUp(0.2)} className={styles.galleryItem}>
+                  <img src="/nyc-2.jpg" alt="Collaborating at NYC Internship" className={styles.galleryImg} />
+                </motion.div>
+                <motion.div {...fadeUp(0.3)} className={styles.galleryItem}>
+                  <img src="/nyc-3.jpg" alt="Showing product at NYC Internship" className={styles.galleryImg} />
+                </motion.div>
+                <motion.div {...fadeUp(0.4)} className={styles.galleryItem}>
+                  <img src="/nyc-4.jpg" alt="Team bonding at NYC Internship" className={styles.galleryImg} />
+                </motion.div>
               </div>
             </div>
 
