@@ -117,7 +117,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px; /* Fit inside the 16px box border radius */
+  border-radius: 50%; /* Clip the white square corners */
 }
 
 .logoInner {
@@ -181,11 +181,11 @@
 }
 
 .sheryiansLogo {
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
   border-radius: 4px;
   object-fit: cover;
-  margin: 0 2px;
+  margin: 0 4px;
 }
 
 /* Status Badge Completed */
