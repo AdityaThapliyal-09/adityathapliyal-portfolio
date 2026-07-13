@@ -11,9 +11,9 @@
 /* ── Dock bar ─────────────────────────────── */
 .dock {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 8px;
-  padding: 6px 8px; /* Reduced vertical padding */
+  padding: 8px 12px;
   background: rgba(45, 45, 45, 0.7); /* Lighter neutral so it doesn't blend into black bg */
   border: 1px solid rgba(255, 255, 255, 0.15); /* Stronger border for visibility */
   border-radius: 32px; /* Pill shape */

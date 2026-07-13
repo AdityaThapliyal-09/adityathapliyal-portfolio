@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useMotionValue,
@@ -138,11 +138,11 @@ export default function FloatingDock() {
         transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
       >
         {DOCK_ITEMS.map((item, i) => (
-          <span key={item.id}>
+          <React.Fragment key={item.id}>
             {/* Separator before social links */}
             {i === 6 && <DockSeparator />}
             <DockIcon item={item} mouseX={mouseX} />
-          </span>
+          </React.Fragment>
         ))}
       </motion.div>
     </div>
