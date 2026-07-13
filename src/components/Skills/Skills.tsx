@@ -7,7 +7,7 @@ import {
   SiReact, SiNextdotjs, SiFlutter, SiTailwindcss, SiFigma,
   SiNodedotjs, SiExpress, SiDjango, SiFastapi,
   SiFirebase, SiSupabase, SiMongodb, SiMysql,
-  SiGit, SiGithub, SiPostman, SiPostgresql,
+  SiGit, SiGithub, SiPostman, SiPostgresql, SiRazorpay
 } from "react-icons/si";
 import { skillCategories } from "@/lib/data";
 import styles from "./Skills.module.css";
@@ -24,7 +24,7 @@ const iconMap: Record<string, IconType> = {
   SiFirebase, SiSupabase, SiMongodb, SiMysql,
   SiGit, SiGithub,
   SiVisualstudiocode: SiGit,
-  SiRazorpay: SiPostgresql,
+  SiRazorpay,
   SiClerk: SiReact,
   SiTwilio: SiPostgresql,
 };
