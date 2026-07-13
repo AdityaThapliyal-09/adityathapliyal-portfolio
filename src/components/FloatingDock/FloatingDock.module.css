@@ -14,12 +14,12 @@
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: rgba(45, 45, 45, 0.7); /* Lighter neutral so it doesn't blend into black bg */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* Stronger border for visibility */
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.08); 
   border-radius: 32px; /* Pill shape */
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
   pointer-events: all;
 }
 
@@ -50,8 +50,9 @@
 }
 
 .iconBtn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+  transform: scale(1.05);
 }
 
 /* ── Tooltip ──────────────────────────────── */
@@ -99,7 +100,7 @@
   .dock {
     padding: 6px;
     gap: 4px;
-    background: rgba(30, 30, 30, 0.85); /* Slightly darker on mobile but still visible */
+    background: rgba(255, 255, 255, 0.05); /* Slightly brighter on mobile */
   }
   .iconBtn {
     font-size: 0.9rem;

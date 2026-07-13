@@ -57,7 +57,7 @@ export default function Projects() {
               <motion.article
                 key={project.id}
                 {...inView(0.1 + i * 0.15)}
-                className={`glass-card ${styles.card}`}
+                className="glass-card-shell"
                 id={cardId}
                 onMouseMove={(e: React.MouseEvent<HTMLElement>) => handleMouseMove(e, cardId)}
                 onTouchMove={(e: React.TouchEvent<HTMLElement>) => handleTouchMove(e, cardId)}
@@ -66,6 +66,7 @@ export default function Projects() {
                   "--card-to": palette.to,
                 } as React.CSSProperties}
               >
+                <div className={`glass-card ${styles.card}`}>
                 {/* Reveal Canvas Background */}
                 <div className={styles.canvasReveal} aria-hidden="true" />
                 
@@ -181,6 +182,7 @@ export default function Projects() {
                         </span>
                       )}
                     </div>
+                  </div>
                   </div>
                 </div>
               </motion.article>

@@ -1,14 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import BackgroundText from "@/components/BackgroundText/BackgroundText";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -75,9 +69,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={inter.variable}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body>
+      <body className="antialiased">
         <BackgroundText />
         {children}
       </body>

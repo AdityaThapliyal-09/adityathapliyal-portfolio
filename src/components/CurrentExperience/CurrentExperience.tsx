@@ -49,9 +49,10 @@ export default function CurrentExperience() {
 
         <div className={styles.contentWrapper}>
           
-          {/* Main Glass Card */}
-          <motion.div {...fadeUp(0.2)} className={`glass-card ${styles.mainCard}`}>
-            <div className={styles.cardHighlight} />
+          {/* Main Glass Card (Double-Bezel Architecture) */}
+          <motion.div {...fadeUp(0.2)} className="glass-card-shell">
+            <div className={`glass-card ${styles.mainCard}`}>
+              <div className={styles.cardHighlight} />
             
             {/* Header: Identity & Status */}
             <div className={styles.cardHeader}>
@@ -198,6 +199,8 @@ export default function CurrentExperience() {
               <p>
                 Gained elite industry experience and practical software development skills through real-world product building.
               </p>
+            </div>
+
             </div>
 
           </motion.div>
