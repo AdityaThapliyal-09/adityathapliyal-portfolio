@@ -1,4 +1,4 @@
-import type { Project, Experience, SkillCategory, Certification, SocialLink } from "@/types";
+import type { Project, Experience, SkillCategory } from "@/types";
 
 export const siteConfig = {
   name: "Aditya Thapliyal",
@@ -13,12 +13,6 @@ export const siteConfig = {
   githubUrl: "https://github.com/AdityaThapliyal-09",
   linkedinUrl: "https://www.linkedin.com/in/aditya-thapliyal",
 };
-
-export const socialLinks: SocialLink[] = [
-  { label: "GitHub",   url: "https://github.com/AdityaThapliyal-09",           icon: "github"   },
-  { label: "LinkedIn", url: "https://www.linkedin.com/in/aditya-thapliyal",     icon: "linkedin" },
-  { label: "Email",    url: "mailto:adityathapliyal52@gmail.com",               icon: "mail"     },
-];
 
 export const projects: Project[] = [
   {
@@ -115,82 +109,60 @@ export const skillCategories: SkillCategory[] = [
     id: "languages",
     label: "Languages",
     skills: [
-      { name: "TypeScript", icon: "SiTypescript", level: 88 },
-      { name: "JavaScript", icon: "SiJavascript", level: 90 },
-      { name: "Python",     icon: "SiPython",     level: 78 },
-      { name: "Dart",       icon: "SiDart",       level: 80 },
-      { name: "HTML5",      icon: "SiHtml5",      level: 95 },
-      { name: "CSS3",       icon: "SiCss3",       level: 90 },
-      { name: "SQL",        icon: "SiPostgresql", level: 75 },
+      { name: "TypeScript", icon: "SiTypescript" },
+      { name: "JavaScript", icon: "SiJavascript" },
+      { name: "Python",     icon: "SiPython"     },
+      { name: "Dart",       icon: "SiDart"       },
+      { name: "HTML5",      icon: "SiHtml5"      },
+      { name: "CSS3",       icon: "SiCss3"       },
+      { name: "SQL",        icon: "SiPostgresql" },
     ],
   },
   {
     id: "frontend",
     label: "Frontend",
     skills: [
-      { name: "React.js",     icon: "SiReact",       level: 90 },
-      { name: "Next.js",      icon: "SiNextdotjs",   level: 88 },
-      { name: "Flutter",      icon: "SiFlutter",     level: 82 },
-      { name: "Tailwind CSS", icon: "SiTailwindcss", level: 88 },
-      { name: "ShadCN UI",    icon: "SiRadixui",     level: 82 },
-      { name: "Figma",        icon: "SiFigma",       level: 80 },
+      { name: "React.js",     icon: "SiReact"       },
+      { name: "Next.js",      icon: "SiNextdotjs"   },
+      { name: "Flutter",      icon: "SiFlutter"     },
+      { name: "Tailwind CSS", icon: "SiTailwindcss" },
+      { name: "ShadCN UI",    icon: "SiRadixui"     },
+      { name: "Figma",        icon: "SiFigma"       },
     ],
   },
   {
     id: "backend",
     label: "Backend",
     skills: [
-      { name: "Node.js",    icon: "SiNodedotjs", level: 82 },
-      { name: "Express.js", icon: "SiExpress",   level: 80 },
-      { name: "FastAPI",    icon: "SiFastapi",   level: 74 },
-      { name: "Django",     icon: "SiDjango",    level: 68 },
-      { name: "REST APIs",  icon: "SiPostman",   level: 88 },
+      { name: "Node.js",    icon: "SiNodedotjs" },
+      { name: "Express.js", icon: "SiExpress"   },
+      { name: "FastAPI",    icon: "SiFastapi"   },
+      { name: "Django",     icon: "SiDjango"    },
+      { name: "REST APIs",  icon: "SiPostman"   },
     ],
   },
   {
     id: "databases",
     label: "Databases",
     skills: [
-      { name: "Firebase",  icon: "SiFirebase",  level: 87 },
-      { name: "Supabase",  icon: "SiSupabase",  level: 86 },
-      { name: "MongoDB",   icon: "SiMongodb",   level: 78 },
-      { name: "MySQL",     icon: "SiMysql",     level: 74 },
-      { name: "PostgreSQL",icon: "SiPostgresql",level: 70 },
+      { name: "Firebase",  icon: "SiFirebase"   },
+      { name: "Supabase",  icon: "SiSupabase"   },
+      { name: "MongoDB",   icon: "SiMongodb"    },
+      { name: "MySQL",     icon: "SiMysql"      },
+      { name: "PostgreSQL",icon: "SiPostgresql" },
     ],
   },
   {
     id: "tools",
     label: "Tools",
     skills: [
-      { name: "Git",        icon: "SiGit",               level: 90 },
-      { name: "GitHub",     icon: "SiGithub",            level: 92 },
-      { name: "Figma",      icon: "SiFigma",             level: 80 },
-      { name: "Postman",    icon: "SiPostman",           level: 82 },
-      { name: "VS Code",    icon: "SiVisualstudiocode",  level: 95 },
-      { name: "Razorpay",   icon: "SiRazorpay",          level: 72 },
+      { name: "Git",        icon: "SiGit"               },
+      { name: "GitHub",     icon: "SiGithub"            },
+      { name: "Figma",      icon: "SiFigma"             },
+      { name: "Postman",    icon: "SiPostman"           },
+      { name: "VS Code",    icon: "SiVisualstudiocode"  },
+      { name: "Razorpay",   icon: "SiRazorpay"          },
     ],
   },
 ];
 
-export const certifications: Certification[] = [
-  {
-    title: "Become an AI-Powered Marketer",
-    issuer: "Semrush Academy",
-    date: "Apr 2026",
-  },
-  {
-    title: "Digital Skills: Artificial Intelligence",
-    issuer: "Accenture via FutureLearn",
-    date: "Nov 2025",
-  },
-  {
-    title: "Getting Started with Microsoft Excel",
-    issuer: "Coursera",
-    date: "Apr 2026",
-  },
-  {
-    title: "Agriculture, Economics and Nature",
-    issuer: "University of Western Australia via FutureLearn",
-    date: "Oct 2024",
-  },
-];

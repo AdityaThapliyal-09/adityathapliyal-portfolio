@@ -24,23 +24,10 @@ export interface Experience {
 export interface Skill {
   name: string;
   icon: string;
-  level: number; // 0-100
 }
 
 export interface SkillCategory {
   id: string;
   label: string;
   skills: Skill[];
-}
-
-export interface Certification {
-  title: string;
-  issuer: string;
-  date: string;
-}
-
-export interface SocialLink {
-  label: string;
-  url: string;
-  icon: string;
 }

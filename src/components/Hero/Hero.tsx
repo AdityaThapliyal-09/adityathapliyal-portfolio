@@ -25,7 +25,7 @@ export default function Hero() {
         
         {/* Subtitle / Status */}
         <motion.div {...fadeUp(0.1)} className={styles.statusBadge}>
-          <span className="status-dot" style={{ backgroundColor: "var(--accent-green)", boxShadow: "0 0 10px var(--accent-green)", animation: "pulse 2s infinite" }} />
+          <span className="status-dot" aria-hidden="true" style={{ backgroundColor: "var(--accent-green)", boxShadow: "0 0 10px var(--accent-green)", animation: "pulse 2s infinite" }} />
           <span><strong>Available for Opportunities</strong></span>
         </motion.div>
 

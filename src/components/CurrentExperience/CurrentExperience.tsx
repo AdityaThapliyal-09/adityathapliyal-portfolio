@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { FiCheckCircle, FiUsers, FiTarget, FiZap, FiCode, FiBriefcase, FiAward, FiBarChart2, FiFigma, FiTrendingUp } from "react-icons/fi";
 import styles from "./CurrentExperience.module.css";
@@ -58,7 +59,7 @@ export default function CurrentExperience() {
             <div className={styles.cardHeader}>
               <div className={styles.identityGroup}>
                 <div className={styles.logoBox}>
-                  <img src="/nyclogo.jpg" alt="NYC" className={styles.logoImage} />
+                  <Image src="/nyclogo.webp" alt="Not Your College logo" width={64} height={64} className={styles.logoImage} />
                 </div>
                 <div className={styles.companyMeta}>
                   <h3 className={styles.companyName}>Not Your College</h3>
@@ -67,7 +68,7 @@ export default function CurrentExperience() {
                     <span className={styles.divider}>·</span>
                     <span className={styles.poweredBy}>
                       Powered by
-                      <img src="/sheryians.jpg" alt="Sheryians" className={styles.sheryiansLogo} />
+                      <Image src="/sheryians.webp" alt="Sheryians logo" width={22} height={22} className={styles.sheryiansLogo} />
                       Sheryians
                     </span>
                   </div>
@@ -129,30 +130,30 @@ export default function CurrentExperience() {
               {/* Product Mockups */}
               <div className={styles.gallerySubGrid}>
                 <motion.div {...fadeUp(0.1)} className={styles.galleryItem}>
-                  <img src="/dormeats-1.png" alt="DormEats Splash Screen" className={styles.galleryImg} />
+                  <Image src="/dormeats-1.png" alt="DormEats Splash Screen" width={640} height={480} className={styles.galleryImg} />
                 </motion.div>
                 <motion.div {...fadeUp(0.2)} className={styles.galleryItem}>
-                  <img src="/dormeats-2.png" alt="DormEats UI Mockups" className={styles.galleryImg} />
+                  <Image src="/dormeats-2.png" alt="DormEats UI Mockups" width={640} height={480} className={styles.galleryImg} />
                 </motion.div>
                 <motion.div {...fadeUp(0.3)} className={styles.galleryItem}>
-                  <img src="/dormeats-3.png" alt="DormEats Checkout Screen" className={styles.galleryImg} />
+                  <Image src="/dormeats-3.png" alt="DormEats Checkout Screen" width={640} height={480} className={styles.galleryImg} />
                 </motion.div>
               </div>
 
               {/* Real World Photos */}
               <div className={styles.galleryRealWorld}>
                 <motion.div {...fadeUp(0.4)} className={`${styles.galleryItem} ${styles.galleryMain}`}>
-                  <img src="/nyc-1.jpg" alt="Presenting at NYC Internship" className={styles.galleryImg} />
+                  <Image src="/nyc-1.webp" alt="Presenting at NYC Internship" width={1600} height={686} className={styles.galleryImg} />
                 </motion.div>
                 <div className={styles.gallerySubGrid}>
                   <motion.div {...fadeUp(0.5)} className={styles.galleryItem}>
-                    <img src="/nyc-letter.jpg" alt="NYC Welcome Letter" className={styles.galleryImg} />
+                    <Image src="/nyc-letter.webp" alt="NYC Welcome Letter" width={1200} height={900} className={styles.galleryImg} />
                   </motion.div>
                   <motion.div {...fadeUp(0.6)} className={styles.galleryItem}>
-                    <img src="/nyc-2.jpg" alt="Collaborating at NYC Internship" className={styles.galleryImg} />
+                    <Image src="/nyc-2.webp" alt="Collaborating at NYC Internship" width={1600} height={1200} className={styles.galleryImg} />
                   </motion.div>
                   <motion.div {...fadeUp(0.7)} className={styles.galleryItem}>
-                    <img src="/nyc-3.jpg" alt="Showing product at NYC Internship" className={styles.galleryImg} />
+                    <Image src="/nyc-3.webp" alt="Showing product at NYC Internship" width={1600} height={1200} className={styles.galleryImg} />
                   </motion.div>
                 </div>
               </div>
