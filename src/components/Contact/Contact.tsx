@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiMail, FiGithub, FiLinkedin, FiSend, FiPhone, FiMapPin } from "react-icons/fi";
+import { siteConfig } from "@/lib/data";
 import styles from "./Contact.module.css";
 
 const fadeUp = (delay = 0) => ({
@@ -15,35 +16,35 @@ const contactLinks = [
   {
     icon: FiMail,
     label: "Email",
-    value: "adityathapliyal52@gmail.com",
-    href: "mailto:adityathapliyal52@gmail.com",
+    value: siteConfig.email,
+    href: `mailto:${siteConfig.email}`,
     id: "contact-email-link",
   },
   {
     icon: FiGithub,
     label: "GitHub",
     value: "AdityaThapliyal-09",
-    href: "https://github.com/AdityaThapliyal-09",
+    href: siteConfig.githubUrl,
     id: "contact-github-link",
   },
   {
     icon: FiLinkedin,
     label: "LinkedIn",
     value: "aditya-thapliyal",
-    href: "https://www.linkedin.com/in/aditya-thapliyal",
+    href: siteConfig.linkedinUrl,
     id: "contact-linkedin-link",
   },
   {
     icon: FiPhone,
     label: "Phone",
-    value: "+91 6395613242",
+    value: siteConfig.phone,
     href: "tel:+916395613242",
     id: "contact-phone-link",
   },
   {
     icon: FiMapPin,
     label: "Location",
-    value: "Dehradun, Uttarakhand, India",
+    value: siteConfig.location,
     href: "#",
     id: "contact-location",
   },
@@ -51,10 +52,10 @@ const contactLinks = [
 
 
 export default function Contact() {
-  const mailtoHref = `mailto:adityathapliyal52@gmail.com?subject=${encodeURIComponent(
+  const mailtoHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
     "Opportunity from Your Portfolio"
   )}&body=${encodeURIComponent(
-    "Hi Aditya,\n\nI saw your portfolio and I'm interested in connecting.\n\n"
+    "Hi Aditya,\n\nI saw your portfolio and I’d love to connect about a project or opportunity.\n\n"
   )}`;
 
   return (
@@ -102,7 +103,7 @@ export default function Contact() {
                 <span className={styles.availTitle}>Available for Opportunities</span>
               </div>
               <p className={styles.availText}>
-                5th Semester BCA student looking for opportunities in full-stack AI/ML development or product roles. Open to remote and on-site positions globally.
+                {siteConfig.availabilityLine}
               </p>
             </div>
           </motion.div>

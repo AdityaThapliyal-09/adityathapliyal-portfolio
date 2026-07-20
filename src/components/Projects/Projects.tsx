@@ -122,21 +122,9 @@ export default function Projects() {
                     </div>
 
                     {/* Key impact line */}
-                    {i === 0 && (
-                      <p className={styles.impact}>
-                        🏆 Semi-finalist at GEHU Hackathon · 100+ users tested
-                      </p>
-                    )}
-                    {i === 1 && (
-                      <p className={styles.impact}>
-                        🛡 Real-time SOS · Role-based dashboards · Live map
-                      </p>
-                    )}
-                    {i === 2 && (
-                      <p className={styles.impact}>
-                        📱 iOS + Android · Real-time matchmaking · Turf booking
-                      </p>
-                    )}
+                    <p className={styles.impact}>
+                      {project.impact ?? "Built with care, designed for real use, and shipped with clarity."}
+                    </p>
 
                     {/* Tech stack */}
                     <div className={styles.techStack}>

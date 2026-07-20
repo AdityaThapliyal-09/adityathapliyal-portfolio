@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import BackgroundText from "@/components/BackgroundText/BackgroundText";
+import { siteConfig } from "@/lib/data";
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -12,13 +13,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adityathapliyal.vercel.app"),
-  title: "Aditya Thapliyal — AI Full Stack Engineer",
-  description:
-    "5th Semester BCA student at Graphic Era Hill University. AI/ML Full Stack Engineer & Product Builder. I build elegant, intelligent digital products end-to-end.",
+  title: siteConfig.title,
+  description: siteConfig.description,
   keywords: [
     "Aditya Thapliyal",
     "Full Stack Developer",
     "AI Engineer",
+    "Product Builder",
     "Next.js Developer",
     "Flutter Developer",
     "React Developer",
@@ -32,28 +33,27 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Portfolio",
   ],
-  authors: [{ name: "Aditya Thapliyal" }],
-  creator: "Aditya Thapliyal",
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
   openGraph: {
-    title: "Aditya Thapliyal",
-    description: "AI Full Stack Engineer & Product Builder",
+    title: siteConfig.name,
+    description: siteConfig.description,
     url: "https://adityathapliyal.vercel.app",
-    siteName: "Aditya Thapliyal Portfolio",
+    siteName: `${siteConfig.name} Portfolio`,
     type: "website",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Aditya Thapliyal — AI Full Stack Engineer",
+        alt: `${siteConfig.title} — Portfolio`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aditya Thapliyal — AI Full Stack Engineer",
-    description:
-      "BCA student and product builder. Building full-stack web apps, mobile apps, and AI-powered systems.",
+    title: siteConfig.title,
+    description: siteConfig.description,
     creator: "@adityathapliyal",
     images: ["/og-image.jpg"],
   },

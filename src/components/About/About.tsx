@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiMapPin, FiBook, FiCode, FiZap } from "react-icons/fi";
+import { siteConfig } from "@/lib/data";
 import styles from "./About.module.css";
 
 const fadeUp = (delay = 0) => ({
@@ -12,10 +13,10 @@ const fadeUp = (delay = 0) => ({
 });
 
 const highlights = [
-  { icon: FiMapPin, label: "Location", value: "Dehradun, India" },
-  { icon: FiBook, label: "Education", value: "BCA @ GEHU" },
-  { icon: FiCode, label: "Focus", value: "AI + Full Stack" },
-  { icon: FiZap, label: "Status", value: "Open to Opportunities" },
+  { icon: FiMapPin, label: siteConfig.aboutHighlights[0].label, value: siteConfig.aboutHighlights[0].value },
+  { icon: FiBook, label: siteConfig.aboutHighlights[1].label, value: siteConfig.aboutHighlights[1].value },
+  { icon: FiCode, label: siteConfig.aboutHighlights[2].label, value: siteConfig.aboutHighlights[2].value },
+  { icon: FiZap, label: siteConfig.aboutHighlights[3].label, value: siteConfig.aboutHighlights[3].value },
 ];
 
 export default function About() {
@@ -32,14 +33,17 @@ export default function About() {
           {/* Main Bio Text */}
           <div className={styles.bioCol}>
             <motion.p {...fadeUp(0.1)} className={styles.bioLead}>
-              I believe the best products disappear into the background, leaving only the experience.
+              {siteConfig.aboutLead}
             </motion.p>
-            <motion.p {...fadeUp(0.2)} className={styles.bioText}>
-              I&apos;m a 5th-semester BCA student at Graphic Era Hill University. While many engineers focus strictly on the implementation, I focus on the outcome. I build end-to-end digital products that solve real human problems, heavily utilizing Artificial Intelligence to create magical, frictionless experiences.
-            </motion.p>
-            <motion.p {...fadeUp(0.3)} className={styles.bioText}>
-              My work spans from architecting robust backends with Python and FastAPI, to crafting pixel-perfect, 60fps frontend interfaces with Next.js and React. I don&apos;t just write code—I ship products.
-            </motion.p>
+            {siteConfig.aboutParagraphs.map((paragraph, index) => (
+              <motion.p
+                key={paragraph}
+                {...fadeUp(0.2 + index * 0.1)}
+                className={styles.bioText}
+              >
+                {paragraph}
+              </motion.p>
+            ))}
           </div>
 
           {/* Highlights Grid */}

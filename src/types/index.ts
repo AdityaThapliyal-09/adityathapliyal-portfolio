@@ -8,6 +8,7 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   featured?: boolean;
+  impact?: string;
 }
 
 export interface Experience {

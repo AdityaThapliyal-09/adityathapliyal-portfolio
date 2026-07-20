@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero/Hero";
 import WhatIBuild from "@/components/WhatIBuild/WhatIBuild";
 import About from "@/components/About/About";
+import Now from "@/components/Now/Now";
 import Skills from "@/components/Skills/Skills";
 import Projects from "@/components/Projects/Projects";
 import SideProjects from "@/components/SideProjects/SideProjects";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <WhatIBuild />
         <About />
+        <Now />
         <Skills />
         <Projects />
         <SideProjects />

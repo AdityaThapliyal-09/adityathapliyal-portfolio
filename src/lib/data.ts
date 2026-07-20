@@ -4,12 +4,49 @@ export const siteConfig = {
   name: "Aditya Thapliyal",
   title: "Aditya Thapliyal — Full Stack & Mobile Engineer",
   description:
-    "5th Semester BCA student at Graphic Era Hill University. AI/ML Full Stack Engineer & Product Builder. I build elegant, intelligent digital products end-to-end.",
+    "BCA student and builder of AI-native products. I design and ship full-stack applications, mobile products, and intelligent experiences end-to-end.",
   email: "adityathapliyal52@gmail.com",
   phone: "+91 6395613242",
   location: "Dehradun, Uttarakhand, India",
   tagline: "Bridging Artificial Intelligence with Premium Digital Experiences.",
   status: "Open to Opportunities",
+  heroRole: "Building AI-native products and polished digital experiences.",
+  heroTagline:
+    "I design the product, architect the system, and ship the final experience with care — from first idea to live release.",
+  availabilityLine:
+    "Usually available for product, full-stack, and AI engineering conversations within 24 hours.",
+  aboutLead:
+    "I care about products that feel effortless, useful, and genuinely memorable.",
+  aboutParagraphs: [
+    "I’m a 5th-semester BCA student at Graphic Era Hill University building software that people can actually use. My work sits at the intersection of product thinking, AI, and polished execution.",
+    "I enjoy working across the stack — from product framing and UI/UX to backend systems and deployment — because the strongest products come from a clear point of view and strong implementation.",
+  ],
+  aboutHighlights: [
+    { label: "Location", value: "Dehradun, India" },
+    { label: "Education", value: "BCA @ GEHU" },
+    { label: "Focus", value: "AI + Product Engineering" },
+    { label: "Status", value: "Open to Opportunities" },
+  ],
+  nowHeadline: "What I’m building now",
+  nowIntro:
+    "I’m currently focused on turning ideas into reliable products that combine smart systems with polished user experiences.",
+  nowItems: [
+    {
+      title: "AI-native product experiences",
+      description: "Designing interfaces and flows where AI supports the user without feeling forced or gimmicky.",
+      metric: "3 product ideas in motion",
+    },
+    {
+      title: "Founder-led build mode",
+      description: "Shipping and refining real products with an eye on usability, reliability, and long-term growth.",
+      metric: "2 platforms in active iteration",
+    },
+    {
+      title: "Full-stack craft",
+      description: "Strengthening the backend, deployment, and product decision-making behind the scenes.",
+      metric: "Focused on systems thinking",
+    },
+  ],
   githubUrl: "https://github.com/AdityaThapliyal-09",
   linkedinUrl: "https://www.linkedin.com/in/aditya-thapliyal",
 };
@@ -19,37 +56,40 @@ export const projects: Project[] = [
     id: "uniexchange",
     title: "UniExchange",
     description:
-      "A campus commerce platform that lets students buy, sell, lend, borrow, and offer services within their university — eliminating the friction of student commerce.",
+      "A campus commerce platform that helps students buy, sell, lend, borrow, and offer services without friction.",
     longDescription:
-      "Founded UniExchange to solve real student commerce problems on campus. Integrated Clerk for auth, Razorpay for payments, and Twilio for SMS notifications. The platform was tested by 100+ students at GEHU and advanced to the semi-finals at a university hackathon.",
+      "I founded UniExchange to solve a real campus problem: making commerce feel simple, trustworthy, and useful for students. The product combines a polished UI, payments, auth, and notifications in a way that feels lightweight and dependable.",
     techStack: ["TypeScript", "Next.js", "ShadCN UI", "Supabase", "Clerk", "Razorpay", "Twilio"],
     tag: "Full Stack · Marketplace",
     githubUrl: "https://github.com/AdityaThapliyal-09",
     featured: true,
+    impact: "Semi-finalist at GEHU hackathon · 100+ students tested the experience",
   },
   {
     id: "campusshield",
     title: "CampusShield",
     description:
-      "A real-time campus safety platform with SOS alerts, Safe Walk timer, and anonymous tip reporting — built to keep students safer on campus.",
+      "A real-time campus safety platform with SOS alerts, Safe Walk timers, and anonymous reporting built for urgent situations.",
     longDescription:
-      "Built CampusShield with role-based dashboards for students, admins, and security staff. Live location tracking powered by OpenStreetMap. Supabase handles real-time data sync, auth, and database.",
+      "CampusShield combines role-based dashboards, live location-aware workflows, and a clear safety-first experience. The product is designed to be calm under pressure while still being actionable in the moment.",
     techStack: ["React.js", "Supabase", "OpenStreetMap API", "TypeScript", "CSS Modules"],
     tag: "Full Stack · Safety",
     githubUrl: "https://github.com/AdityaThapliyal-09",
     featured: true,
+    impact: "Real-time safety workflows · Role-based access · Map-based response logic",
   },
   {
     id: "verso",
     title: "Verso",
     description:
-      "A sports matchmaking and turf booking app — helping teams discover opponents, schedule matches, and reserve turfs without the hassle.",
+      "A sports matchmaking and turf-booking app that makes it easy for teams to find games and secure venues.",
     longDescription:
-      "Designed and built Verso end-to-end. Cross-platform iOS and Android app using Flutter with Firebase real-time database for instant match updates, team discovery, and turf booking confirmation.",
+      "Verso was built as a mobile-first way to remove friction from local sports coordination. The experience is fast, event-driven, and centered around helping players and teams make plans quickly.",
     techStack: ["Flutter", "Firebase", "Dart", "Cloud Firestore", "Firebase Auth"],
     tag: "Mobile · Sports",
     githubUrl: "https://github.com/AdityaThapliyal-09",
     featured: true,
+    impact: "Cross-platform mobile experience · Live updates · Booking flow built-in",
   },
 ];
 

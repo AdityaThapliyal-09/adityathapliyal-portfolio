@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FiDownload, FiArrowDown } from "react-icons/fi";
 import Typewriter from "@/components/Typewriter/Typewriter";
 import Spotlight from "@/components/Spotlight/Spotlight";
+import { siteConfig } from "@/lib/data";
 import styles from "./Hero.module.css";
 
 const fadeUp = (delay = 0) => ({
@@ -26,7 +27,7 @@ export default function Hero() {
         {/* Subtitle / Status */}
         <motion.div {...fadeUp(0.1)} className={styles.statusBadge}>
           <span className="status-dot" aria-hidden="true" style={{ backgroundColor: "var(--accent-green)", boxShadow: "0 0 10px var(--accent-green)", animation: "pulse 2s infinite" }} />
-          <span><strong>Available for Opportunities</strong></span>
+          <span><strong>{siteConfig.status}</strong></span>
         </motion.div>
 
         {/* Name Container */}
@@ -39,15 +40,19 @@ export default function Hero() {
         {/* Role Container */}
         <div style={{ minHeight: "clamp(1.3rem, 4.5vw, 3rem)", display: "flex", alignItems: "center", marginBottom: "var(--space-2)" }}>
           <h2 className={styles.role} style={{ marginBottom: 0 }}>
-            <Typewriter text="AI/ML Fullstack Engineer." delay={1800} speed={50} />
+            <Typewriter text={siteConfig.heroRole} delay={1800} speed={50} />
           </h2>
         </div>
 
         {/* Tagline */}
         <motion.p {...fadeUp(0.4)} className={styles.tagline}>
-          I build premium digital experiences at the intersection of artificial intelligence and product design. Meticulous execution, from architecture to the final pixel.
+          {siteConfig.heroTagline}
         </motion.p>
 
+        <motion.p {...fadeUp(0.48)} className={styles.subtext}>
+          {siteConfig.availabilityLine}
+        </motion.p>
+        
         {/* Actions */}
         <motion.div {...fadeUp(0.5)} className={styles.ctaRow}>
           <button
