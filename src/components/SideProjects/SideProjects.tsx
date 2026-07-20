@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import styles from "./SideProjects.module.css";
 
@@ -20,6 +21,7 @@ const SIDE_PROJECTS = [
     liveUrl: "https://aurum-nu-seven.vercel.app",
     githubUrl: "https://github.com/AdityaThapliyal-09/aurum-restaurant",
     color: "#eab308", // gold accent
+    image: "/aurum.webp",
   },
   {
     id: "nova-dental",
@@ -29,6 +31,7 @@ const SIDE_PROJECTS = [
     liveUrl: "https://nova-dental-beta.vercel.app",
     githubUrl: "https://github.com/AdityaThapliyal-09/nova-dental",
     color: "#3b82f6", // blue accent
+    image: "/nova-dental.webp",
   },
   {
     id: "elevate-realty",
@@ -38,6 +41,7 @@ const SIDE_PROJECTS = [
     liveUrl: "https://elevate-realty-beige.vercel.app",
     githubUrl: "https://github.com/AdityaThapliyal-09/elevate-realty",
     color: "#a8a29e", // stone/beige accent
+    image: "/elevate-realty.webp",
   },
 ];
 
@@ -93,6 +97,17 @@ export default function SideProjects() {
                 {/* Reveal Canvas Background */}
                 <div className={styles.canvasReveal} aria-hidden="true" />
                 
+                {/* Project Image */}
+                <div className={styles.cardImageWrap}>
+                  <Image 
+                    src={project.image} 
+                    alt={`${project.title} screenshot`}
+                    width={1024}
+                    height={640}
+                    className={styles.cardImage}
+                  />
+                </div>
+
                 <div className={styles.cardContent}>
                   {/* Category Tag */}
                   <span

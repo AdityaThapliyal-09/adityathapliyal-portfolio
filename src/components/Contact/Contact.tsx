@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiGithub, FiLinkedin, FiSend, FiPhone, FiMapPin } from "react-icons/fi";
 import styles from "./Contact.module.css";
@@ -50,23 +49,13 @@ const contactLinks = [
   },
 ];
 
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    // Simulate API call for form
-    setTimeout(() => {
-      setStatus("success");
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1500);
-  };
+  const mailtoHref = `mailto:adityathapliyal52@gmail.com?subject=${encodeURIComponent(
+    "Opportunity from Your Portfolio"
+  )}&body=${encodeURIComponent(
+    "Hi Aditya,\n\nI saw your portfolio and I'm interested in connecting.\n\n"
+  )}`;
 
   return (
     <section className={`section ${styles.contactSection}`} id="contact">
@@ -118,89 +107,23 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact "Form" -> Mailto Link */}
           <motion.div {...fadeUp(0.2)}>
-            <form
+            <a
+              href={mailtoHref}
               className={`glass-card ${styles.form}`}
-              onSubmit={handleSubmit}
-              id="contact-form"
+              id="contact-mailto-link"
             >
               <h3 className={styles.formTitle}>Send a Message</h3>
+              <p className={styles.formPrompt}>
+                Have an opportunity or a project in mind? Click here to open your email client and send a message directly.
+              </p>
 
-              <div className={styles.formGroup}>
-                <label htmlFor="contact-name" className={styles.label}>
-                  Name
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  className={styles.input}
-                />
+              <div className={styles.mailtoButton}>
+                <FiSend size={18} />
+                Open Email Client
               </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="contact-email" className={styles.label}>
-                  Email
-                </label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="contact-message" className={styles.label}>
-                  Message
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  required
-                  rows={5}
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Tell me about the opportunity or project..."
-                  className={`${styles.input} ${styles.textarea}`}
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === "loading" || status === "success"}
-                className={`btn btn-primary ${styles.submitBtn}`}
-                id="contact-submit-btn"
-              >
-                {status === "loading" ? (
-                  <>
-                    <span className={styles.spinner} /> Sending…
-                  </>
-                ) : status === "success" ? (
-                  "✓ Message Sent!"
-                ) : (
-                  <>
-                    <FiSend size={16} />
-                    Send Message
-                  </>
-                )}
-              </button>
-
-              {status === "success" && (
-                <p className={styles.successMsg}>
-                  Thanks! I&apos;ll get back to you shortly.
-                </p>
-              )}
-            </form>
+            </a>
           </motion.div>
         </div>
       </div>
